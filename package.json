@@ -1,0 +1,14 @@
+{
+  "name": "CodeZoo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/SceptreData/CodeZoo.git",
+  "author": "David Bergeron <david.f.bergeron@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx tailwind build css/dev.css -o css/style.css"
+  },
+  "dependencies": {
+    "tailwindcss": "^1.1.2"
+  }
+}
