@@ -23,13 +23,13 @@
     </ul>
   </nav>
 
-  <section class="tab-content sm:w-4/5 xl:w-3/5 mx-auto bg-gray-100 px-2 py-3">
+  <section class="tab-content sm:w-4/5 xl:w-4/5 mx-auto bg-gray-100 px-2 py-3">
     <h2 class="text-4xl">Your Messages</h2>
 
     <div class="messages">
 
       <div class="mx-auto max-w-lg sm:max-w-xl msg border px-2 py-4 flex items-center lg:items-start relative">
-        <button data-micromodal-trigger="modal-1" class="delete-btn absolute top-0 right-0 w-6 h-6 mr-3 mt-1 bg-gray-200 flex justify-center items-center rounded-full text-gray-500 hover:bg-gray-300 hover:text-gray-600">
+        <button data-micromodal-trigger="modal-delete" class="delete-btn absolute top-0 right-0 w-6 h-6 mr-3 mt-1 bg-gray-200 flex justify-center items-center rounded-full text-gray-500 hover:bg-gray-300 hover:text-gray-600">
           <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
         </button>
        
@@ -47,47 +47,132 @@
 
   </section>
 
-  <section class="tab-content sm:w-4/5 mx-auto bg-gray-100 px-5 py-3">
+  <section class="tab-content w-full mx-auto bg-gray-100 px-2 py-3">
     <h2 class="text-4xl">Active Courses</h2>
+    <div class="active-courses flex flex-wrap">
+
+      <!-- Course Card -->
+      <div class="max-w-xs lg:max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="/img/html5.jpg" alt="Sunset in the mountains">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">The Basics: HTML5 and CSS</div>
+          <p class="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div class="flex flex-wrap px-2 py-4 text-center">
+          <span
+            class="flex items-center w-5/12 mx-auto mb-3 shadow inline-block bg-yellow-400 hover:bg-yellow-300 px-3 py-2 text-xs font-semibold text-gray-700">
+            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z" />
+              </svg>
+            Stream Course
+          </span>
+          <span class="flex items-center w-5/12 mb-3 shadow inline-block bg-yellow-400 hover:bg-yellow-300 px-3 py-2 text-xs font-semibold text-gray-700 mx-auto">
+            <svg class="fill-current w-4 h-4 mr-1" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file-archive" class="svg-inline--fa fa-file-archive fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M128.3 160v32h32v-32zm64-96h-32v32h32zm-64 32v32h32V96zm64 32h-32v32h32zm177.6-30.1L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM256 51.9l76.1 76.1H256zM336 464H48V48h79.7v16h32V48H208v104c0 13.3 10.7 24 24 24h104zM194.2 265.7c-1.1-5.6-6-9.7-11.8-9.7h-22.1v-32h-32v32l-19.7 97.1C102 385.6 126.8 416 160 416c33.1 0 57.9-30.2 51.5-62.6zm-33.9 124.4c-17.9 0-32.4-12.1-32.4-27s14.5-27 32.4-27 32.4 12.1 32.4 27-14.5 27-32.4 27zm32-198.1h-32v32h32z"></path></svg>
+            Starter Files
+          </span>
+          <span class="flex items-center w-5/12 mb-3 shadow inline-block bg-yellow-400 hover:bg-yellow-300 px-3 py-2 text-xs font-semibold text-gray-700 mx-auto">
+            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Download Video 
+          </span>
+          <span class="flex items-center w-5/12 mb-3 shadow border inline-block bg-gray-200   px-3 py-2 text-xs font-semibold text-gray-500 mx-auto">
+            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" /></svg> <span>View Certificate</span>
+          </span>
+        </div>
+      </div>
+
+       <div class="max-w-xs lg:max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="/img/html5.jpg" alt="Sunset in the mountains">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">The Basics: HTML5 and CSS</div>
+          <p class="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div class="flex flex-wrap px-2 py-4 text-center">
+          <span
+            class="flex items-center w-5/12 mx-auto mb-3 shadow inline-block bg-yellow-400 hover:bg-yellow-300 px-3 py-2 text-xs font-semibold text-gray-700">
+            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z" />
+              </svg>
+            Stream Course
+          </span>
+          <span class="flex items-center w-5/12 mb-3 shadow inline-block bg-yellow-400 hover:bg-yellow-300 px-3 py-2 text-xs font-semibold text-gray-700 mx-auto">
+            <svg class="fill-current w-4 h-4 mr-1" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file-archive" class="svg-inline--fa fa-file-archive fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M128.3 160v32h32v-32zm64-96h-32v32h32zm-64 32v32h32V96zm64 32h-32v32h32zm177.6-30.1L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM256 51.9l76.1 76.1H256zM336 464H48V48h79.7v16h32V48H208v104c0 13.3 10.7 24 24 24h104zM194.2 265.7c-1.1-5.6-6-9.7-11.8-9.7h-22.1v-32h-32v32l-19.7 97.1C102 385.6 126.8 416 160 416c33.1 0 57.9-30.2 51.5-62.6zm-33.9 124.4c-17.9 0-32.4-12.1-32.4-27s14.5-27 32.4-27 32.4 12.1 32.4 27-14.5 27-32.4 27zm32-198.1h-32v32h32z"></path></svg>
+            Starter Files
+          </span>
+          <span class="flex items-center w-5/12 mb-3 shadow inline-block bg-yellow-400 hover:bg-yellow-300 px-3 py-2 text-xs font-semibold text-gray-700 mx-auto">
+            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Download Video 
+          </span>
+          <span class="flex items-center w-5/12 mb-3 shadow border inline-block bg-gray-200   px-3 py-2 text-xs font-semibold text-gray-500 mx-auto">
+            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" /></svg> <span>View Certificate</span>
+          </span>
+        </div>
+      </div>    
+    </div>
   </section>
   <section class="tab-content sm:w-4/5 mx-auto bg-gray-100 px-5 py-3">
     <h2 class="text-4xl">Archived Courses</h2>
   </section>
 </main>
-<!-- 
- <div class="delete-msg-popper flex flex-col justify-between border hidden bg-white rounded p-5 relative">
-          <button class="close-popper-btn absolute top-0 right-0 w-6 h-6 bg-gray-200 flex justify-center items-center rounded-full text-gray-500 hover:bg-gray-300 hover:text-gray-600 mr-3 mt-1">
-            <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-          </button>
-          <h5 class="font-semibold mt-3">Are you sure?</h5>
-          
 
-          <div class="delete-actions flex justify-between">
-            <button class="text-sm rounded border hover:bg-gray-100 border-gray-500 px-1 sm:px-3 py-3">No! Keep Message!</button>
-            <button class="text-sm rounded border-4 border-red-500 bg-red-700 hover:bg-red-600 text-white px-1 py-3">Delete message.</button>
-          </div>
-        </div> -->
-
-<div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+<!-- Delete MSG -->
+<div class="modal micromodal-slide" id="modal-delete" aria-hidden="true">
   <div class="modal__overlay fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center" tabindex="-1" data-micromodal-close>
     <div class="modal__container bg-gray-100 p-8 rounded overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
       <header class="flex justify-between items-center">
-        <h5 class="font-semibold text-lg leading-tight text-gray-900" id="modal-1-title">
+        <h5 class="font-semibold text-lg leading-tight text-gray-900" id="modal-delete-title">
            Delete Message: Are you sure?
         </h2>
         <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
       </header>
-      <main class="my-3 text-gray-800" id="modal-1-content">
+      <main class="my-3 text-gray-800" id="modal-delete-content">
          <p>The following action will destroy the message permanently.</p>
       </main>
       <footer class="flex justify-between">
-        <button class="modal__btn text-sm rounded border hover:bg-gray-100 border-gray-500 px-4 sm:px-3 py-3">Cancel</button>
+        <button class="modal__btn text-sm rounded border hover:bg-gray-100 border-gray-500 px-4 sm:px-3 py-3" data-micromodal-close >Cancel</button>
         <button class="modal__btn text-sm rounded border-4 border-red-500 bg-red-700 hover:bg-red-600 text-white px-4 py-3" data-micromodal-close aria-label="Close this dialog window">Delete Message</button>
       </footer>
     </div>
   </div>
 </div>
 
+<div class="modal micromodal-slide" id="modal-reply" aria-hidden="true">
+  <div class="modal__overlay fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center" tabindex="-1"
+    data-micromodal-close>
+    <div class="modal__container bg-gray-100 p-8 rounded overflow-y-auto" role="dialog" aria-modal="true"
+      aria-labelledby="modal-reply-title">
+      <header class="flex justify-between items-center">
+        <h5 class="font-semibold text-lg leading-tight text-gray-900" id="modal-reply-title">
+          Delete Message: Are you sure?
+          </h2>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+      </header>
+      <main class="my-3 text-gray-800" id="modal-reply-content">
+        <p>The following action will destroy the message permanently.</p>
+      </main>
+      <footer class="flex justify-between">
+        <button class="modal__btn text-sm rounded border hover:bg-gray-100 border-gray-500 px-4 sm:px-3 py-3"
+          data-micromodal-close>Cancel</button>
+        <button
+          class="modal__btn text-sm rounded border-4 border-red-500 bg-red-700 hover:bg-red-600 text-white px-4 py-3"
+          data-micromodal-close aria-label="Close this dialog window">Delete Message</button>
+      </footer>
+    </div>
+  </div>
+</div>
 
 <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
