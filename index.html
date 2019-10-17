@@ -28,9 +28,9 @@
 
     <div class="messages">
 
-      <div class="msg border px-2 py-4 flex items-center lg:items-start relative">
-        <button class="delete-btn absolute top-0 right-0 w-6 h-6 mr-3 mt-1 bg-gray-200 flex justify-center items-center rounded-full text-gray-500 hover:bg-gray-300 hover:text-gray-600">
-          <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+      <div class="mx-auto max-w-lg sm:max-w-xl msg border px-2 py-4 flex items-center lg:items-start relative">
+        <button data-micromodal-trigger="modal-1" class="delete-btn absolute top-0 right-0 w-6 h-6 mr-3 mt-1 bg-gray-200 flex justify-center items-center rounded-full text-gray-500 hover:bg-gray-300 hover:text-gray-600">
+          <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
         </button>
        
         <img class="w-2/5 md:w-1/5 lg:w-1/8 h-full mx-auto lg:ml-5 mr-5" src="img/male-avatar.jpg" alt="Your Friend Ted">
@@ -54,21 +54,42 @@
     <h2 class="text-4xl">Archived Courses</h2>
   </section>
 </main>
-
+<!-- 
  <div class="delete-msg-popper flex flex-col justify-between border hidden bg-white rounded p-5 relative">
           <button class="close-popper-btn absolute top-0 right-0 w-6 h-6 bg-gray-200 flex justify-center items-center rounded-full text-gray-500 hover:bg-gray-300 hover:text-gray-600 mr-3 mt-1">
-            <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+            <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
           </button>
           <h5 class="font-semibold mt-3">Are you sure?</h5>
-          <p>The following action will destroy the message permanently.</p>
+          
 
           <div class="delete-actions flex justify-between">
             <button class="text-sm rounded border hover:bg-gray-100 border-gray-500 px-1 sm:px-3 py-3">No! Keep Message!</button>
             <button class="text-sm rounded border-4 border-red-500 bg-red-700 hover:bg-red-600 text-white px-1 py-3">Delete message.</button>
           </div>
-        </div>
-<div class="fixed pin z-50 overflow-auto bg-smoke-light flex"></div>
+        </div> -->
 
+<div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+  <div class="modal__overlay fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center" tabindex="-1" data-micromodal-close>
+    <div class="modal__container bg-gray-100 p-8 rounded overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+      <header class="flex justify-between items-center">
+        <h5 class="font-semibold text-lg leading-tight text-gray-900" id="modal-1-title">
+           Delete Message: Are you sure?
+        </h2>
+        <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+      </header>
+      <main class="my-3 text-gray-800" id="modal-1-content">
+         <p>The following action will destroy the message permanently.</p>
+      </main>
+      <footer class="flex justify-between">
+        <button class="modal__btn text-sm rounded border hover:bg-gray-100 border-gray-500 px-4 sm:px-3 py-3">Cancel</button>
+        <button class="modal__btn text-sm rounded border-4 border-red-500 bg-red-700 hover:bg-red-600 text-white px-4 py-3" data-micromodal-close aria-label="Close this dialog window">Delete Message</button>
+      </footer>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
