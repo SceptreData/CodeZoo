@@ -6,9 +6,12 @@
   "author": "David Bergeron <david.f.bergeron@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "npx tailwind build css/dev.css -o css/style.css"
+    "build": "npx tailwind build css/dev.css -o css/style.css",
+    "dev": "onchange 'css/dev.css' -- npm run build"
   },
   "dependencies": {
+    "onchange": "^6.1.0",
+    "popper.js": "^1.16.0",
     "tailwindcss": "^1.1.2"
   }
 }
