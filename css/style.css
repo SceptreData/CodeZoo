@@ -11489,6 +11489,12 @@ video {
   }
 }
 
+@media (min-width: 1280px) {
+  .push-left {
+    margin-left: -32rem;
+  }
+}
+
 /* MODAL STYLES
 /**************************\
   Basic Modal Styles

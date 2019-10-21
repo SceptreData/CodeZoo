@@ -71,6 +71,11 @@
     margin-left: -31rem;
   }
 }
+@screen xl {
+  .push-left {
+    margin-left: -32rem;
+  }
+}
 
 /* MODAL STYLES
 /**************************\
