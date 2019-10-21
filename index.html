@@ -1,221 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CodeZoo - Your Courses</title>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700|Inconsolata&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
- 
-<header>
-  <div id="nav" class="bg-white shadow">
-    <div class="md:px-8">
-      <nav class="relative flex flex-wrap items-center justify-between md:py-4">
-        <div class="relative z-10 flex-shrink-0 pl-4 py-4 md:p-0">
-          <a href="#" class="branding flex hover:text-gray-700">
-          <svg class="w-8 h-8 mr-3" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="hippo"  role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M581.12 96.2c-27.67-.15-52.5 17.58-76.6 26.62C489.98 88.27 455.83 64 416 64c-11.28 0-21.95 2.3-32 5.88V56c0-13.26-10.75-24-24-24h-16c-13.25 0-24 10.74-24 24v48.98C286.01 79.58 241.24 64 192 64 85.96 64 0 135.64 0 224v240c0 8.84 7.16 16 16 16h64c8.84 0 16-7.16 16-16v-70.79C128.35 407.57 166.72 416 208 416s79.65-8.43 112-22.79V464c0 8.84 7.16 16 16 16h64c8.84 0 16-7.16 16-16V288h128v32c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16v-32c17.67 0 32-14.33 32-32v-92.02c0-34.09-24.79-67.59-58.88-67.78zM448 176c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16z"></path></svg>
-            <h1 class="text-xl">CodeZoo</h1>
-          </a>
+<body class="bg-gray-100">
+
+  <header>
+    <div id="nav" class="bg-white shadow">
+      <div class=" md:px-8">
+        <nav class="relative z-10 flex items-center justify-between md:py-4">
+          <div class="text-gray-900 relative z-10 flex-shrink-0 pl-4 py-4 md:p-0">
+            <a href="#" class="branding flex hover:text-green-500">
+              <svg class="w-8 h-8 mr-3" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="hippo"
+                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <path fill="currentColor"
+                  d="M581.12 96.2c-27.67-.15-52.5 17.58-76.6 26.62C489.98 88.27 455.83 64 416 64c-11.28 0-21.95 2.3-32 5.88V56c0-13.26-10.75-24-24-24h-16c-13.25 0-24 10.74-24 24v48.98C286.01 79.58 241.24 64 192 64 85.96 64 0 135.64 0 224v240c0 8.84 7.16 16 16 16h64c8.84 0 16-7.16 16-16v-70.79C128.35 407.57 166.72 416 208 416s79.65-8.43 112-22.79V464c0 8.84 7.16 16 16 16h64c8.84 0 16-7.16 16-16V288h128v32c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16v-32c17.67 0 32-14.33 32-32v-92.02c0-34.09-24.79-67.59-58.88-67.78zM448 176c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16z">
+                </path>
+              </svg>
+              <h1 class="text-xl">CodeZoo</h1>
+            </a>
             <p class="text-xs">It's a <span class="font-bold">jungle</span> out there...</p>
-        </div>
-        <div class="flex-shrink-0 pr-4 md:hidden">
-          <button ref="openButton" @click="open" type="button"
-            class="block text-gray-600 focus:outline-none focus:text-gray-900" aria-label="Menu">
-            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+          </div>
+          <div class=" pr-8">
+          </div>
+          <div class="flex items-center  pr-4">
+            <span id="alerts" class="flex mr-10 md:mr-0 lg:relative z-30 text-gray-700 hover:text-green-900 push-left">
+              <button><svg class="hover:text-green-300 h-8 w-8" focusable="false" data-prefix="fas" data-icon="bell"
+                  role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path fill="currentColor"
+                    d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z">
+                  </path>
+                </svg></button>
+              <span
+                class="pointer-events-none text-xs flex justify-center items-center relative -ml-6 mt-2 rounded-full bg-green-500 w-4 h-4">1</span>
+            </span>
+            <button type="button" id="menu-btn"
+              class="md:hidden block text-gray-600 focus:outline-none focus:text-gray-900 hover:text-green-400"
+              aria-label="Menu">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M3 6C3 5.44772 3.44772 5 4 5H20C20.5523 5 21 5.44772 21 6C21 6.55228 20.5523 7 20 7H4C3.44772 7 3 6.55228 3 6Z" />
+                <path
+                  d="M3 12C3 11.4477 3.44772 11 4 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H4C3.44772 13 3 12.5523 3 12Z" />
+                <path
+                  d="M4 17C3.44772 17 3 17.4477 3 18C3 18.5523 3.44772 19 4 19H20C20.5523 19 21 18.5523 21 18C21 17.4477 20.5523 17 20 17H4Z" />
+              </svg>
+            </button>
+          </div>
+          <div id="nav-menu"
+            class="nav-menu z-40 md:static h-screen w-2/3 md:w-auto md:h-auto bg-gray-200 text-lg md:text-sm shadow-lg  md:shadow-none pl-8 pr-0  py-8 md:py-0 fixed top-0 right-0  md:mt-0 flex flex-col md:static md:block md:ml-0 md:flex md:flex-row md:items-baseline md:justify-between md:bg-transparent">
+            <button id="nav-menu-exit-btn" class="absolute top-0 right-0 md:hidden mt-4 mr-10 hover:text-gray-600">
+              <svg class="bg-gray-400 hover:bg-gray-500  rounded-full w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24">
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                <path d="M0 0h24v24H0z" fill="none" /></svg>
+            </button>
+            <div class="lg:absolute inset-0 md:flex items-center justify-center">
+              <a href="#"
+                class="md:hidden mt-5 md:mt-0 mb-3 md:mb-0 block md:inline text-lg md:text-sm font-medium text-gray-900 hover:text-gray-700">Home</a>
+              <a href="#"
+                class="flex md:mt-0 mb-3 md:mb-0 block text-lg md:text-sm font-medium text-gray-900 hover:text-gray-700">
+
+                <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px" y="0px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+                  <g id="Bounding_Box">
+                    <rect fill="none" width="24" height="24" />
+                  </g>
+                  <g id="Flat">
+                    <g id="ui_x5F_spec_x5F_header_copy_2">
+                    </g>
+                    <g>
+                      <path d="M21,5c-1.11-0.35-2.33-0.5-3.5-0.5c-1.95,0-4.05,0.4-5.5,1.5c-1.45-1.1-3.55-1.5-5.5-1.5S2.45,4.9,1,6v14.65
+			c0,0.25,0.25,0.5,0.5,0.5c0.1,0,0.15-0.05,0.25-0.05C3.1,20.45,5.05,20,6.5,20c1.95,0,4.05,0.4,5.5,1.5c1.35-0.85,3.8-1.5,5.5-1.5
+			c1.65,0,3.35,0.3,4.75,1.05c0.1,0.05,0.15,0.05,0.25,0.05c0.25,0,0.5-0.25,0.5-0.5V6C22.4,5.55,21.75,5.25,21,5z M21,18.5
+			c-1.1-0.35-2.3-0.5-3.5-0.5c-1.7,0-4.15,0.65-5.5,1.5V8c1.35-0.85,3.8-1.5,5.5-1.5c1.2,0,2.4,0.15,3.5,0.5V18.5z" />
+                      <g>
+                        <path d="M17.5,10.5c0.88,0,1.73,0.09,2.5,0.26V9.24C19.21,9.09,18.36,9,17.5,9c-1.7,0-3.24,0.29-4.5,0.83v1.66
+				C14.13,10.85,15.7,10.5,17.5,10.5z" />
+                        <path d="M13,12.49v1.66c1.13-0.64,2.7-0.99,4.5-0.99c0.88,0,1.73,0.09,2.5,0.26V11.9c-0.79-0.15-1.64-0.24-2.5-0.24
+				C15.8,11.66,14.26,11.96,13,12.49z" />
+                        <path d="M17.5,14.33c-1.7,0-3.24,0.29-4.5,0.83v1.66c1.13-0.64,2.7-0.99,4.5-0.99c0.88,0,1.73,0.09,2.5,0.26v-1.52
+				C19.21,14.41,18.36,14.33,17.5,14.33z" />
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+
+                Courses
+              </a>
+              <a href="#"
+                class="mb-3 md:mb-0 block md:inline md:ml-8 text-lg md:text-sm font-medium text-gray-900 hover:text-gray-700">Leaderboard</a>
+              <a href="#"
+                class="md:hidden mb-3 md:mb-0 block md:inline md:ml-8 text-lg md:text-sm font-medium text-gray-900 hover:text-gray-700">Messages
+                <span class="text-xs align-middle">(1)</span></a>
+              <div class="mb-10 md:mb-0 search-bar flex items-center">
+                <label class="relative z-20 text-gray-700 -mr-6 md:ml-8" title="Search">
+                  <svg class="w-5 h-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search"
+                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                      d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                    </path>
+                  </svg>
+                </label>
+                <input
+                  class="relative z-10 w-48 bg-gray-100 border border-gray-200 rounded py-2 pl-6 pr-0 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-300 h-10"
+                  type="search" placeholder="Search Codezoo...">
+              </div>
+            </div>
+            <div class="mb-3 md:mb-0 md:ml-5 relative">
+              <hr class="mb-5 md:hidden">
+              <div
+                class=" flex flex-row-reverse justify-end md:flex-row md:justify-start items-center text-lg md:text-sm font-medium text-gray-900 hover:text-gray-700">
+                <span class="md:hidden"><a href="#" title="Account">Account</a></span>
+                <span class="hidden md:block">&#8203;</span>
+
+                <a href="#" title="Account">
+                  <img class="mr-5 md:ml-3  w-10 h-10" src="img/male-avatar.jpg" alt="Ted Mozby">
+
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="container mx-auto mt-20">
+    <nav class="tab-nav mx-auto my-10">
+      <ul class="flex justify-center">
+        <li class="tab-itm text-sm sm:text-base  border border-green-400 border-r-0 " data-tab-idx="0">My Messages <span
+            class="text-xs">(1)</span></li>
+        <li class="tab-itm text-sm sm:text-base border border-r-0 border-green-400 active" data-tab-idx="1">Active Courses</li>
+        <li class="tab-itm text-sm sm:text-base border border-green-100" data-tab-idx="2">Archived Courses</li>
+      </ul>
+    </nav>
+
+    <section class="hidden tab-content sm:w-4/5 xl:w-4/5 mx-auto bg-gray-100 px-2 py-3">
+      <h2 class="text-4xl">Your Messages</h2>
+
+      <div class="messages">
+
+        <div
+          class="mb-5 relative bg-green-200 hover:bg-green-300 mx-auto max-w-lg sm:max-w-xl msg border px-2 py-4 flex items-center lg:items-start relative">
+          <button data-micromodal-trigger="modal-delete"
+            class="delete-btn absolute top-0 right-0 w-6 h-6 mr-0 mr-1 sm:mr-5 mt-1 bg-gray-200 flex justify-center items-center rounded-full text-gray-500 hover:bg-gray-300 hover:text-gray-600">
+            <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path
-                d="M3 6C3 5.44772 3.44772 5 4 5H20C20.5523 5 21 5.44772 21 6C21 6.55228 20.5523 7 20 7H4C3.44772 7 3 6.55228 3 6Z" />
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+              <path d="M0 0h24v24H0z" fill="none" /></svg>
+          </button>
+
+          <img class="w-2/5 md:w-1/5 lg:w-1/8 h-full mx-auto lg:ml-5 mr-5" src="img/nerd2.png" alt="Your Friend Ted">
+          <div class="content pb-5">
+            <div class="text-xs sm:text-sm">
+              <span class="text-green-700 mr-4"><span class="italic font-semibold">NEW -</span>Ted Mosby</span>
+              <span class="text-green-500">Today, 8:25AM</span>
+            </div>
+            <h4 class="font-semibold">I hate Php...</h4>
+            <p class="text-sm">Semi-Colons. There is always one missing. I'm going mad, I can't take it anymore...</p>
+          </div>
+          <button data-micromodal-trigger="modal-reply"
+            class="hover:bg-green-500 px-2 rounded py-1 border-t border-l border-green-400 absolute right-0 bottom-0 flex items-center text-green-700 hover:text-green-900">
+
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path
-                d="M3 12C3 11.4477 3.44772 11 4 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H4C3.44772 13 3 12.5523 3 12Z" />
-              <path
-                d="M4 17C3.44772 17 3 17.4477 3 18C3 18.5523 3.44772 19 4 19H20C20.5523 19 21 18.5523 21 18C21 17.4477 20.5523 17 20 17H4Z" />
-            </svg>
+                d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+              <path d="M0 0h24v24H0z" fill="none" /></svg>
+            REPLY
           </button>
         </div>
-        <div class="hidden md:block md:ml-10 md:flex md:items-baseline md:justify-between md:bg-transparent">
-          <div class="lg:absolute inset-0 flex items-center justify-center">
-            <a href="#" class="text-sm font-medium text-gray-900 hover:text-gray-700">Courses</a>
-            <a href="#" class="ml-10 text-sm font-medium text-gray-900 hover:text-gray-700">Leaderboard</a>
-            <a href="#" class="ml-10 text-sm font-medium text-gray-900 hover:text-gray-700">Search</a>
+
+        <div
+          class="mb-5 relative bg-green-100 hover:bg-green-200 mx-auto max-w-lg sm:max-w-xl msg border px-2 py-4 flex items-center lg:items-start relative">
+          <button data-micromodal-trigger="modal-delete"
+            class="delete-btn absolute top-0 right-0 w-6 h-6 mr-0 mr-1 sm:mr-5 mt-1 bg-gray-200 flex justify-center items-center rounded-full text-gray-500 hover:bg-gray-300 hover:text-gray-600">
+            <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+              <path d="M0 0h24v24H0z" fill="none" /></svg>
+          </button>
+
+          <img class="w-2/5 md:w-1/5 lg:w-1/8 h-full mx-auto lg:ml-5 mr-5" src="img/nerd.png" alt="Your Friend Ted">
+          <div class="content pb-5">
+            <div class="text-xs sm:text-sm">
+              <span class="text-green-700 mr-4">Ted Mosby</span>
+              <span class="text-green-500">Today, 8:25AM</span>
+            </div>
+            <h4 class="font-semibold">Dude check out this course</h4>
+            <p class="text-sm">I've been learning a bit of C++ and it's great! Look up "Coming to grips with c++".</p>
           </div>
-          <div class="ml-10 relative flex items-baseline">
-            <a href="#" class=" flex items-center text-sm font-medium text-gray-900 hover:text-gray-700">
-              Account <img class=" ml-3 w-8 h-8" src="img/male-avatar.jpg">
-            </a>
-          </div>
+          <button data-micromodal-trigger="modal-reply"
+            class="hover:bg-green-500 px-2 rounded py-1 border-t border-l border-green-400 absolute right-0 bottom-0 flex items-center text-green-700 hover:text-green-900">
+
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+              <path d="M0 0h24v24H0z" fill="none" /></svg>
+            REPLY
+          </button>
         </div>
-      </nav>
-    </div>
-    </div>
 
-</header>
+      </div>
 
-<main class="container mx-auto mt-20">
-  <nav class="tab-nav mx-auto my-10">
-    <ul class="flex justify-center">
-      <li class="tab-itm border border-r-0 " data-tab-idx="0">My Messages <span id="num-unread-msg"></span></li>
-      <li class="tab-itm border border-r-0 active" data-tab-idx="1">Active Courses</li>
-      <li class="tab-itm border" data-tab-idx="2">Archived Courses</li>
-    </ul>
-  </nav>
-
-  <section class="tab-content sm:w-4/5 xl:w-4/5 mx-auto bg-gray-100 px-2 py-3">
-    <h2 class="text-4xl">Your Messages</h2>
-
-    <div class="messages">
-
-      <div class="mx-auto max-w-lg sm:max-w-xl msg border px-2 py-4 flex items-center lg:items-start relative">
-        <button data-micromodal-trigger="modal-delete" class="delete-btn absolute top-0 right-0 w-6 h-6 mr-3 mt-1 bg-gray-200 flex justify-center items-center rounded-full text-gray-500 hover:bg-gray-300 hover:text-gray-600">
-          <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+      <div
+        class="relative bg-green-100 hover:bg-green-200 mx-auto max-w-lg sm:max-w-xl msg border px-2 py-4 flex items-center lg:items-start relative">
+        <button data-micromodal-trigger="modal-delete"
+          class="delete-btn absolute top-0 right-0 w-6 h-6 mr-0 mr-1 sm:mr-5 mt-1 bg-gray-200 flex justify-center items-center rounded-full text-gray-500 hover:bg-gray-300 hover:text-gray-600">
+          <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+            <path d="M0 0h24v24H0z" fill="none" /></svg>
         </button>
-       
-        <img class="w-2/5 md:w-1/5 lg:w-1/8 h-full mx-auto lg:ml-5 mr-5" src="img/male-avatar.jpg" alt="Your Friend Ted">
-        <div class="content">
+
+        <img class="w-2/5 md:w-1/5 lg:w-1/8 h-full mx-auto lg:ml-5 mr-5" src="img/girl.png" alt="Your Friend Ted">
+        <div class="content pb-5">
           <div class="text-xs sm:text-sm">
-            <span class="text-gray-700 mr-5">Ted Mosby</span>
-            <span class="text-gray-500">Today, 8:25AM</span>
+            <span class="text-green-700 mr-4">Janet Stinger</span>
+            <span class="text-green-500">Yesterday, 9:34AM</span>
           </div>
-          <h4 class="font-semibold">I hate Php...</h4>
-          <p class="text-sm">Semi-Colons. There is always one missing. I'm going mad, I can't take it anymore...</p>
+          <h4 class="font-semibold">Dev Tools</h4>
+          <p class="text-sm">Today I learned about the inspection tools in Firefox. Love me that grid!</p>
+        </div>
+        <button data-micromodal-trigger="modal-reply"
+          class="hover:bg-green-500 px-2 rounded py-1 border-t border-l border-green-400 absolute right-0 bottom-0 flex items-center text-green-700 hover:text-green-900">
+
+          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+            <path d="M0 0h24v24H0z" fill="none" /></svg>
+          REPLY
+        </button>
+      </div>
+
+
+
+    </section>
+
+    <section class="hidden tab-content w-full mx-auto bg-gray-100 px-2 py-3">
+      <h2 class="pl-16 sm:pl-5 text-4xl mb-10">Active Courses</h2>
+      <div class="active-courses flex flex-wrap">
+
+        <!-- Course Card -->
+        <div class="mb-5 mx-auto max-w-xs lg:max-w-sm rounded overflow-hidden shadow-lg">
+          <img class="w-full" src="/img/html5.jpg" alt="HTML5 It all starts here">
+          <div class="px-6 py-4 w-full">
+            <div class="font-bold text-xl mb-2">The Basics: HTML5 and CSS</div>
+            <div class="shadow w-full bg-grey-light mt-2 mb-3">
+              <div class="bg-green-300 text-xs leading-none py-1 text-center text-green-900" style="width: 65%">65%
+                Complete</div>
+            </div>
+            <p class="text-gray-700 text-base">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis
+              eaque,
+              exercitationem praesentium nihil.
+            </p>
+          </div>
+          <div class="flex flex-wrap px-2 py-4 text-center">
+            <span
+              class="cursor-pointer flex items-center w-5/12 mx-auto mb-3 shadow inline-block bg-green-400 hover:bg-green-300 px-3 py-2 text-xs font-semibold text-green-900">
+              <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z" />
+              </svg>
+              Stream Course
+            </span>
+            <span
+              class="cursor-pointer flex items-center w-5/12 mb-3 shadow inline-block bg-green-400 hover:bg-green-300 px-3 py-2 text-xs font-semibold text-green-900 mx-auto">
+
+              <svg class="fill-current w-4 h-4 mr-1" aria-hidden="true" focusable="false" data-prefix="far"
+                data-icon="file-archive" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <path fill="currentColor"
+                  d="M128.3 160v32h32v-32zm64-96h-32v32h32zm-64 32v32h32V96zm64 32h-32v32h32zm177.6-30.1L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM256 51.9l76.1 76.1H256zM336 464H48V48h79.7v16h32V48H208v104c0 13.3 10.7 24 24 24h104zM194.2 265.7c-1.1-5.6-6-9.7-11.8-9.7h-22.1v-32h-32v32l-19.7 97.1C102 385.6 126.8 416 160 416c33.1 0 57.9-30.2 51.5-62.6zm-33.9 124.4c-17.9 0-32.4-12.1-32.4-27s14.5-27 32.4-27 32.4 12.1 32.4 27-14.5 27-32.4 27zm32-198.1h-32v32h32z">
+                </path>
+              </svg>
+              Starter Files
+            </span>
+            <span
+              class="cursor-pointer flex items-center w-5/12 mb-3 shadow inline-block bg-green-400 hover:bg-green-300 px-3 py-2 text-xs font-semibold text-green-900 mx-auto">
+              <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
+              </svg>
+              Download Video
+            </span>
+            <span
+              class="flex items-center w-5/12 mb-3 shadow border inline-block bg-gray-200   px-3 py-2 text-xs font-semibold text-gray-500 mx-auto">
+              <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" /></svg>
+              <span>Claim Certificate</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="mb-5 mx-auto max-w-xs lg:max-w-sm rounded overflow-hidden shadow-lg">
+          <img class="w-full" src="/img/jspic.jpg" alt="Javascript! Hooah">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">Javascript: Intro to Modules</div>
+            <div class=" shadow w-full bg-grey-light mt-2 mb-3">
+              <div class="bg-green-400 text-xs leading-none py-1 text-center text-green-900" style="width: 95%">95%
+                Complete</div>
+            </div>
+            <p class="text-gray-700 text-base">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis
+              eaque,
+              exercitationem praesentium nihil.
+            </p>
+          </div>
+          <div class="flex flex-wrap px-2 py-4 text-center">
+            <span
+              class="cursor-pointer flex items-center w-5/12 mx-auto mb-3 shadow inline-block bg-green-400 hover:bg-green-300 px-3 py-2 text-xs font-semibold text-green-900">
+              <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z" />
+              </svg>
+              Stream Course
+            </span>
+            <span
+              class="cursor-pointer flex items-center w-5/12 mb-3 shadow inline-block bg-green-400 hover:bg-green-300 px-3 py-2 text-xs font-semibold text-green-900 mx-auto">
+              <svg class="fill-current w-4 h-4 mr-1" aria-hidden="true" focusable="false" data-prefix="far"
+                data-icon="file-archive" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <path fill="currentColor"
+                  d="M128.3 160v32h32v-32zm64-96h-32v32h32zm-64 32v32h32V96zm64 32h-32v32h32zm177.6-30.1L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM256 51.9l76.1 76.1H256zM336 464H48V48h79.7v16h32V48H208v104c0 13.3 10.7 24 24 24h104zM194.2 265.7c-1.1-5.6-6-9.7-11.8-9.7h-22.1v-32h-32v32l-19.7 97.1C102 385.6 126.8 416 160 416c33.1 0 57.9-30.2 51.5-62.6zm-33.9 124.4c-17.9 0-32.4-12.1-32.4-27s14.5-27 32.4-27 32.4 12.1 32.4 27-14.5 27-32.4 27zm32-198.1h-32v32h32z">
+                </path>
+              </svg>
+              Starter Files
+            </span>
+            <span
+              class="cursor-pointer flex items-center w-5/12 mb-3 shadow inline-block bg-green-400 hover:bg-green-300 px-3 py-2 text-xs font-semibold text-green-900 mx-auto">
+              <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
+              </svg>
+              Download Video
+            </span>
+            <span
+              class="flex items-center w-5/12 mb-3 shadow border inline-block bg-gray-200   px-3 py-2 text-xs font-semibold text-gray-500 mx-auto">
+              <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" /></svg>
+              <span>Claim Certificate</span>
+            </span>
+          </div>
         </div>
       </div>
-    </div>
 
-  </section>
-
-  <section class="tab-content w-full mx-auto bg-gray-100 px-2 py-3">
-    <h2 class="text-4xl">Active Courses</h2>
-    <div class="active-courses flex flex-wrap">
-
-      <!-- Course Card -->
-      <div class="max-w-xs lg:max-w-sm rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="/img/html5.jpg" alt="Sunset in the mountains">
+      <div class="mb-5 mx-auto max-w-xs lg:max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="/img/python.png" alt="Snake Case will ruin you forever.">
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">The Basics: HTML5 and CSS</div>
+          <div class="font-bold text-xl mb-2">Python: Braces be damned</div>
+          <div class=" shadow w-full bg-grey-light mb-5 mt-2">
+            <div class="bg-yellow-400 text-xs  leading-none py-1 text-center text-green-900" style="width: 100%">
+              Course Complete!
+              <button class=" font-semibold bg-yellow-200 rounded py-2 px-1 hover:bg-yellow-100"> Archive
+                Course?</button>
+            </div>
+          </div>
+
           <p class="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis
+            eaque,
             exercitationem praesentium nihil.
           </p>
         </div>
         <div class="flex flex-wrap px-2 py-4 text-center">
           <span
-            class="flex items-center w-5/12 mx-auto mb-3 shadow inline-block bg-yellow-400 hover:bg-yellow-300 px-3 py-2 text-xs font-semibold text-gray-700">
-            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            class="cursor-pointer flex items-center w-5/12 mx-auto mb-3 shadow inline-block bg-green-400 hover:bg-green-300 px-3 py-2 text-xs font-semibold text-green-900">
+            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24">
               <path d="M0 0h24v24H0z" fill="none" />
               <path
                 d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z" />
-              </svg>
+            </svg>
             Stream Course
           </span>
-          <span class="flex items-center w-5/12 mb-3 shadow inline-block bg-yellow-400 hover:bg-yellow-300 px-3 py-2 text-xs font-semibold text-gray-700 mx-auto">
-            <svg class="fill-current w-4 h-4 mr-1" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file-archive" class="svg-inline--fa fa-file-archive fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M128.3 160v32h32v-32zm64-96h-32v32h32zm-64 32v32h32V96zm64 32h-32v32h32zm177.6-30.1L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM256 51.9l76.1 76.1H256zM336 464H48V48h79.7v16h32V48H208v104c0 13.3 10.7 24 24 24h104zM194.2 265.7c-1.1-5.6-6-9.7-11.8-9.7h-22.1v-32h-32v32l-19.7 97.1C102 385.6 126.8 416 160 416c33.1 0 57.9-30.2 51.5-62.6zm-33.9 124.4c-17.9 0-32.4-12.1-32.4-27s14.5-27 32.4-27 32.4 12.1 32.4 27-14.5 27-32.4 27zm32-198.1h-32v32h32z"></path></svg>
+          <span
+            class="cursor-pointer flex items-center w-5/12 mb-3 shadow inline-block bg-green-400 hover:bg-green-300 px-3 py-2 text-xs font-semibold text-green-900 mx-auto">
+            <svg class="fill-current w-4 h-4 mr-1" aria-hidden="true" focusable="false" data-prefix="far"
+              data-icon="file-archive" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <path fill="currentColor"
+                d="M128.3 160v32h32v-32zm64-96h-32v32h32zm-64 32v32h32V96zm64 32h-32v32h32zm177.6-30.1L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM256 51.9l76.1 76.1H256zM336 464H48V48h79.7v16h32V48H208v104c0 13.3 10.7 24 24 24h104zM194.2 265.7c-1.1-5.6-6-9.7-11.8-9.7h-22.1v-32h-32v32l-19.7 97.1C102 385.6 126.8 416 160 416c33.1 0 57.9-30.2 51.5-62.6zm-33.9 124.4c-17.9 0-32.4-12.1-32.4-27s14.5-27 32.4-27 32.4 12.1 32.4 27-14.5 27-32.4 27zm32-198.1h-32v32h32z">
+              </path>
+            </svg>
             Starter Files
           </span>
-          <span class="flex items-center w-5/12 mb-3 shadow inline-block bg-yellow-400 hover:bg-yellow-300 px-3 py-2 text-xs font-semibold text-gray-700 mx-auto">
-            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-            Download Video 
-          </span>
-          <span class="flex items-center w-5/12 mb-3 shadow border inline-block bg-gray-200   px-3 py-2 text-xs font-semibold text-gray-500 mx-auto">
+          <span
+            class="cursor-pointer flex items-center w-5/12 mb-3 shadow inline-block bg-green-400 hover:bg-green-300 px-3 py-2 text-xs font-semibold text-green-900 mx-auto">
             <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M0 0h24v24H0z" fill="none" />
-              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" /></svg> <span>View Certificate</span>
+              <path
+                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
+            </svg>
+            Download Video
+          </span>
+          <span
+            class="cursor-pointer flex items-center w-5/12 mb-3 shadow border inline-block bg-yellow-400 hover:bg-yellow-300   px-3 py-2 text-xs font-semibold text-gray-900 mx-auto">
+            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" /></svg> <span>
+              Claim Certificate</span>
           </span>
         </div>
       </div>
 
-       <div class="max-w-xs lg:max-w-sm rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="/img/html5.jpg" alt="Sunset in the mountains">
+    </section>
+    <section class="hidden tab-content sm:w-4/5 mx-auto bg-gray-100 px-5 py-3">
+      <h2 class="pl-16 sm:pl-5 text-4xl mb-5">Archived Courses</h2>
+
+      <div class="mb-5 mx-auto max-w-xs lg:max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="/img/learnc.jpg" alt="Sunset in the mountains">
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">The Basics: HTML5 and CSS</div>
+          <div class="font-bold text-xl mb-2">C: Pushing Bits with Sticks</div>
+          <div class=" shadow w-full bg-grey-light mt-2 mb-3">
+            <div class="bg-yellow-400 text-xs font-semibold leading-none py-1 text-center text-green-900"
+              style="width: 100%">
+
+              Course Complete!
+            </div>
+          </div>
           <p class="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis
+            eaque,
             exercitationem praesentium nihil.
           </p>
         </div>
         <div class="flex flex-wrap px-2 py-4 text-center">
           <span
-            class="flex items-center w-5/12 mx-auto mb-3 shadow inline-block bg-yellow-400 hover:bg-yellow-300 px-3 py-2 text-xs font-semibold text-gray-700">
-            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            class="cursor-pointer flex items-center w-5/12 mx-auto mb-3 shadow inline-block bg-green-400 hover:bg-green-300 px-3 py-2 text-xs font-semibold text-green-900">
+            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24">
               <path d="M0 0h24v24H0z" fill="none" />
               <path
                 d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z" />
-              </svg>
+            </svg>
             Stream Course
           </span>
-          <span class="flex items-center w-5/12 mb-3 shadow inline-block bg-yellow-400 hover:bg-yellow-300 px-3 py-2 text-xs font-semibold text-gray-700 mx-auto">
-            <svg class="fill-current w-4 h-4 mr-1" aria-hidden="true" focusable="false" data-prefix="far" data-icon="file-archive" class="svg-inline--fa fa-file-archive fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M128.3 160v32h32v-32zm64-96h-32v32h32zm-64 32v32h32V96zm64 32h-32v32h32zm177.6-30.1L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM256 51.9l76.1 76.1H256zM336 464H48V48h79.7v16h32V48H208v104c0 13.3 10.7 24 24 24h104zM194.2 265.7c-1.1-5.6-6-9.7-11.8-9.7h-22.1v-32h-32v32l-19.7 97.1C102 385.6 126.8 416 160 416c33.1 0 57.9-30.2 51.5-62.6zm-33.9 124.4c-17.9 0-32.4-12.1-32.4-27s14.5-27 32.4-27 32.4 12.1 32.4 27-14.5 27-32.4 27zm32-198.1h-32v32h32z"></path></svg>
+          <span
+            class="cursor-pointer flex items-center w-5/12 mb-3 shadow inline-block bg-green-400 hover:bg-green-300 px-3 py-2 text-xs font-semibold text-green-900 mx-auto">
+            <svg class="fill-current w-4 h-4 mr-1" aria-hidden="true" focusable="false" data-prefix="far"
+              data-icon="file-archive" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <path fill="currentColor"
+                d="M128.3 160v32h32v-32zm64-96h-32v32h32zm-64 32v32h32V96zm64 32h-32v32h32zm177.6-30.1L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM256 51.9l76.1 76.1H256zM336 464H48V48h79.7v16h32V48H208v104c0 13.3 10.7 24 24 24h104zM194.2 265.7c-1.1-5.6-6-9.7-11.8-9.7h-22.1v-32h-32v32l-19.7 97.1C102 385.6 126.8 416 160 416c33.1 0 57.9-30.2 51.5-62.6zm-33.9 124.4c-17.9 0-32.4-12.1-32.4-27s14.5-27 32.4-27 32.4 12.1 32.4 27-14.5 27-32.4 27zm32-198.1h-32v32h32z">
+              </path>
+            </svg>
             Starter Files
           </span>
-          <span class="flex items-center w-5/12 mb-3 shadow inline-block bg-yellow-400 hover:bg-yellow-300 px-3 py-2 text-xs font-semibold text-gray-700 mx-auto">
-            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-            Download Video 
-          </span>
-          <span class="flex items-center w-5/12 mb-3 shadow border inline-block bg-gray-200   px-3 py-2 text-xs font-semibold text-gray-500 mx-auto">
+          <span
+            class="cursor-pointer flex items-center w-5/12 mb-3 shadow inline-block bg-green-400 hover:bg-green-300 px-3 py-2 text-xs font-semibold text-green-900 mx-auto">
             <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M0 0h24v24H0z" fill="none" />
-              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" /></svg> <span>View Certificate</span>
+              <path
+                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
+            </svg>
+            Download Video
+          </span>
+          <span
+            class="cursor-pointer flex items-center w-5/12 mb-3 shadow border inline-block bg-yellow-400 hover:bg-yellow-300   px-3 py-2 text-xs font-semibold text-gray-900 mx-auto">
+            <svg class="fill-current w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" /></svg> <span>
+              Claim Certificate</span>
           </span>
         </div>
-      </div>    
-    </div>
-  </section>
-  <section class="tab-content sm:w-4/5 mx-auto bg-gray-100 px-5 py-3">
-    <h2 class="text-4xl">Archived Courses</h2>
-  </section>
-</main>
+      </div>
+    </section>
+  </main>
 
-<!-- Delete MSG -->
-<div class="modal micromodal-slide" id="modal-delete" aria-hidden="true">
-  <div class="modal__overlay fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center" tabindex="-1" data-micromodal-close>
-    <div class="modal__container bg-gray-100 p-8 rounded overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-      <header class="flex justify-between items-center">
-        <h5 class="font-semibold text-lg leading-tight text-gray-900" id="modal-delete-title">
-           Delete Message: Are you sure?
-        </h2>
-        <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-      </header>
-      <main class="my-3 text-gray-800" id="modal-delete-content">
-         <p>The following action will destroy the message permanently.</p>
-      </main>
-      <footer class="flex justify-between">
-        <button class="modal__btn text-sm rounded border hover:bg-gray-100 border-gray-500 px-4 sm:px-3 py-3" data-micromodal-close >Cancel</button>
-        <button class="modal__btn text-sm rounded border-4 border-red-500 bg-red-700 hover:bg-red-600 text-white px-4 py-3" data-micromodal-close aria-label="Close this dialog window">Delete Message</button>
-      </footer>
-    </div>
-  </div>
-</div>
-
-<div class="modal micromodal-slide" id="modal-reply" aria-hidden="true">
-  <div class="modal__overlay fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center" tabindex="-1"
-    data-micromodal-close>
-    <div class="modal__container bg-gray-100 p-8 rounded overflow-y-auto" role="dialog" aria-modal="true"
-      aria-labelledby="modal-reply-title">
-      <header class="flex justify-between items-center">
-        <h5 class="font-semibold text-lg leading-tight text-gray-900" id="modal-reply-title">
-          Delete Message: Are you sure?
-          </h2>
+  <!-- Delete MSG -->
+  <div class="modal micromodal-slide" id="modal-delete" aria-hidden="true">
+    <div class="modal__overlay fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center" tabindex="-1"
+      data-micromodal-close>
+      <div class="modal__container bg-gray-100 p-8 rounded overflow-y-auto" role="dialog" aria-modal="true">
+        <header class="flex justify-between items-center">
+          <h5 class="font-semibold text-lg leading-tight text-gray-900" id="modal-delete-title">
+            Delete Message: Are you sure?
+          </h5>
           <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-      </header>
-      <main class="my-3 text-gray-800" id="modal-reply-content">
-        <p>The following action will destroy the message permanently.</p>
-      </main>
-      <footer class="flex justify-between">
-        <button class="modal__btn text-sm rounded border hover:bg-gray-100 border-gray-500 px-4 sm:px-3 py-3"
-          data-micromodal-close>Cancel</button>
-        <button
-          class="modal__btn text-sm rounded border-4 border-red-500 bg-red-700 hover:bg-red-600 text-white px-4 py-3"
-          data-micromodal-close aria-label="Close this dialog window">Delete Message</button>
-      </footer>
+        </header>
+        <div class="my-3 text-gray-800" id="modal-delete-content">
+          <p>The following action will destroy the message permanently.</p>
+        </div>
+        <footer class="flex justify-between">
+          <button class="modal__btn text-sm rounded border hover:bg-gray-100 border-gray-500 px-4 sm:px-3 py-3"
+            data-micromodal-close>Cancel</button>
+          <button
+            class="modal__btn text-sm rounded border-4 border-red-500 bg-red-700 hover:bg-red-600 text-white px-4 py-3"
+            data-micromodal-close aria-label="Close this dialog window">Delete Message</button>
+        </footer>
+      </div>
     </div>
   </div>
-</div>
 
-<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="js/main.js"></script>
+  <div class="  modal micromodal-slide" id="modal-reply" aria-hidden="true">
+    <div class="modal__overlay fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center" tabindex="-1"
+      data-micromodal-close>
+      <div class="modal__container w-full sm:w-4/5 bg-gray-100 p-8 rounded overflow-y-auto" role="dialog"
+        aria-modal="true" aria-labelledby="modal-reply-title">
+        <header class="flex justify-between items-center">
+          <h5 class="ml-4 font-semibold text-lg leading-tight text-gray-900" id="modal-reply-title">
+            Reply
+          </h5>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <div class="my-3 w-64 text-gray-800" id="modal-reply-content">
+
+          <form class="w-full max-w-lg">
+            <div class=" mb-6">
+              <div class="w-full">
+                <label class="block text-gray-500 font-bold  mb-1 md:mb-0 pl-4 pr-4" for="reply-subject">
+                  Subject
+                </label>
+              </div>
+              <div class="w-full">
+                <input
+                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
+                  id="reply-subject" type="text" value="Whats up Doc?">
+              </div>
+              <div class="w-full">
+                <label class=" block text-gray-500 font-bold  mb-1 md:mb-0 pl-4 pr-4" for="reply-msg">
+                  Message
+                </label>
+                <textarea
+                  class="msg-body bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border:green-500"
+                  name="reply-msg" id="reply-msg"></textarea>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+        <footer class="flex justify-between">
+          <button class="modal__btn text-sm rounded border hover:bg-gray-100 border-gray-500 px-4 sm:px-3 py-3"
+            data-micromodal-close>Cancel</button>
+          <button
+            class="modal__btn text-sm font-semibold rounded border-4 border-green-500 bg-green-700 hover:bg-green-600 text-white px-4 py-3"
+            data-micromodal-close aria-label="Close this dialog window">Send Message</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

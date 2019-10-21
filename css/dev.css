@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 .tab-itm {
-  @apply bg-gray-300 border-gray-800 px-8 py-2 cursor-pointer text-gray-500;
+  @apply text-center bg-green-200 border-green-800 px-2 py-2 cursor-pointer text-green-600;
 }
 
 .tab-itm:hover {
-  @apply bg-gray-200 text-gray-800;
+  @apply bg-green-300 text-green-800;
 }
 
 .tab-itm.active {
-  @apply bg-gray-400 text-gray-700;
+  @apply bg-green-400 text-green-900;
 }
 
 .tab-itm.active:hover {
-  @apply bg-gray-300 text-gray-800;
+  @apply bg-green-300 text-green-800;
 }
 
 .modal {
@@ -24,6 +24,52 @@
 
 .modal.is-open {
   display: block;
+}
+
+.nav-menu {
+  margin-right: -100vw;
+  transition: margin .3s ease;
+}
+
+.nav-menu.active {
+  @apply mr-0;
+}
+
+@screen md {
+  .nav-menu {
+    transition:none;
+    @apply mr-0;
+  }
+}
+
+.tooltip {
+  @apply z-20;
+}
+.tooltip-arrow{
+  @apply z-20;
+  position: absolute;
+  margin-top: -5px;
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #9ae6b4 transparent;
+  left: calc(50%);
+}
+
+.tooltip-inner{
+  @apply z-20;
+  @apply px-3 py-2;
+  @apply text-green-900;
+  @apply bg-green-300;
+}
+
+@screen sm {
+  .msg-body {
+    width: 150%;
+  }
+}
+@screen lg {
+  .push-left {
+    margin-left: -31rem;
+  }
 }
 
 /* MODAL STYLES

@@ -11362,29 +11362,30 @@ video {
 }
 
 .tab-itm {
-  background-color: #e2e8f0;
-  border-color: #2d3748;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  text-align: center;
+  background-color: #c6f6d5;
+  border-color: #276749;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   cursor: pointer;
-  color: #a0aec0;
+  color: #38a169;
 }
 
 .tab-itm:hover {
-  background-color: #edf2f7;
-  color: #2d3748;
+  background-color: #9ae6b4;
+  color: #276749;
 }
 
 .tab-itm.active {
-  background-color: #cbd5e0;
-  color: #4a5568;
+  background-color: #68d391;
+  color: #22543d;
 }
 
 .tab-itm.active:hover {
-  background-color: #e2e8f0;
-  color: #2d3748;
+  background-color: #9ae6b4;
+  color: #276749;
 }
 
 .modal {
@@ -11393,6 +11394,57 @@ video {
 
 .modal.is-open {
   display: block;
+}
+
+.nav-menu {
+  margin-right: -100vw;
+  transition: margin .3s ease;
+}
+
+.nav-menu.active {
+  margin-right: 0;
+}
+
+@media (min-width: 768px) {
+  .nav-menu {
+    transition:none;
+    margin-right: 0;
+  }
+}
+
+.tooltip {
+  z-index: 20;
+}
+
+.tooltip-arrow{
+  z-index: 20;
+  position: absolute;
+  margin-top: -5px;
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #9ae6b4 transparent;
+  left: calc(50%);
+}
+
+.tooltip-inner{
+  z-index: 20;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #22543d;
+  background-color: #9ae6b4;
+}
+
+@media (min-width: 640px) {
+  .msg-body {
+    width: 150%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .push-left {
+    margin-left: -31rem;
+  }
 }
 
 /* MODAL STYLES
