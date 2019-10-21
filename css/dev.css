@@ -61,6 +61,11 @@
   @apply bg-green-300;
 }
 
+@media (max-width:640px) and (orientation: landscape){
+  .nav-menu a {
+    @apply text-sm;
+  }
+}
 @screen sm {
   .msg-body {
     width: 150%;
