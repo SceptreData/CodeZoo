@@ -15,6 +15,7 @@
   "dependencies": {
     "@babel/preset-env": "^7.6.3",
     "browserify": "^16.5.0",
+    "micromodal": "^0.4.2",
     "onchange": "^6.1.0",
     "popper.js": "^1.16.0",
     "tailwindcss": "^1.1.2",

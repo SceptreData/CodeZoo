@@ -1,4 +1,5 @@
 import Tooltip from 'tooltip.js';
+import MicroModal from 'micromodal';
 
 const alerts = document.querySelector('#alerts');
 
@@ -17,8 +18,6 @@ function InitializeEverything() {
   menuBtn.addEventListener('click', toggleNav);
   exitMenuBtn.addEventListener('click', toggleNav);
   switchTab(1);
-
-  // Set up tooltips
 
   let alertBadge = new Tooltip(alerts, {
     title: '1 New Message',
